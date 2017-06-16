@@ -134,16 +134,16 @@ app.post('/getData', function(request, response){
 	weight = Number(request.body.weight);
 
 	switch(Number(result.body.type)){
-		case 1 :
+		case 1:
 		result = calcPostageLettersStamped(weight);
 		break;
-		case 2 :
+		case 2:
 		result = calcPostageLettersMetered(weight);
 		break;
-		case 3 :
+		case 3:
 		result = calcPostageLargeEnvelopes(wieght);
 		break;
-		case 4 :
+		case 4:
 		result = calPostageParcel(weight);
 		break;
 	}
