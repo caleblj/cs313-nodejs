@@ -16,13 +16,13 @@ function calcPostageLettersMetered(wieght){
 	}
 }
 
-add.post('/getData', funciton(request, response){
+app.post('/getData', function(request, response){
 
 	//
 	var result,
 	weight = Number(request.body.weight);
 
-	switch(Number(t.body.type){
+	switch(Number(result.body.type)){
 		case 2 :
 		result = calcPostageLettersMetered(weight);
 		break
