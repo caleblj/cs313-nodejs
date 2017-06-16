@@ -23,9 +23,6 @@ function calcPostageLettersStamped(wieght){
 	else if(weight == 3.5){
 		return 1.12;
 	}
-	else{
-		return Not Valid;
-	}
 }
 
 function calcPostageLettersMetered(wieght){
@@ -40,9 +37,6 @@ function calcPostageLettersMetered(wieght){
 	}
 	else if(weight == 3.5){
 		return 1.09;
-	}
-	else{
-		return Not Valid;
 	}
 }
 
@@ -86,9 +80,6 @@ function calcPostageLargeEnvelopes(wieght){
 	else if(weight == 13){
 		return 3.50;
 	}
-	else{
-		return Not Valid;
-	}
 }
 
 function calcPostageLargeEnvelopes(wieght){
@@ -131,9 +122,7 @@ function calcPostageLargeEnvelopes(wieght){
 	else if(weight == 13){
 		return 4.29;
 	}
-	else{
-		return Not Valid;
-	}
+
 }
 
 
