@@ -136,16 +136,16 @@ app.post('/getData', function(request, response){
 	switch(Number(result.body.type)){
 		case 1 :
 		result = calcPostageLettersStamped(weight);
-		break
+		break;
 		case 2 :
 		result = calcPostageLettersMetered(weight);
-		break
+		break;
 		case 3 :
 		result = calcPostageLargeEnvelopes(wieght);
-		break
+		break;
 		case 4 :
 		result = calPostageParcel(weight);
-		break
+		break;
 	}
 
 	response.render('result', {
