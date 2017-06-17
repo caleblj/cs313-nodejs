@@ -129,11 +129,10 @@ function calcPostageLargeEnvelopes(wieght){
 
 app.post('/getData', function(request, response){
 
-	//
 	var result,
 	weight = Number(request.body.weight);
 
-	switch(result.body.type){
+	switch(request.body.type){
 		case '1':
 		result = calcPostageLettersStamped(weight);
 		break;
