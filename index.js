@@ -171,8 +171,3 @@ app.listen(process.env.PORT || 3000, function() {
 	console.log('server is listening');
 })
 
-<form action="/" method="GET">
-
-  <a href="https://lit-hollows-45843.herokuapp.com/">Back</a>
-
-</form>
