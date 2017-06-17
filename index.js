@@ -10,7 +10,7 @@ app.use(bodyParser());
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
-function calcPostageLettersStamped(wieght){
+function calcPostageLettersStamped(weight){
 	if (weight == 1){
 		return 0.49;
 	}
@@ -23,9 +23,12 @@ function calcPostageLettersStamped(wieght){
 	else if(weight == 3.5){
 		return 1.12;
 	}
+	else{
+		//return Not Valid;
+	}
 }
 
-function calcPostageLettersMetered(wieght){
+function calcPostageLettersMetered(weight){
 	if (weight == 1){
 		return 0.46;
 	}
@@ -38,9 +41,12 @@ function calcPostageLettersMetered(wieght){
 	else if(weight == 3.5){
 		return 1.09;
 	}
+	else{
+		//return Not Valid;
+	}
 }
 
-function calcPostageLargeEnvelopes(wieght){
+function calcPostageLargeEnvelopes(weight){
 	if (weight == 1){
 		return 0.98;
 	}
@@ -80,9 +86,12 @@ function calcPostageLargeEnvelopes(wieght){
 	else if(weight == 13){
 		return 3.50;
 	}
+	else{
+		//return Not Valid;
+	}
 }
 
-function calcPostageLargeEnvelopes(wieght){
+function calcPostageLargeEnvelopes(weight){
 	if (weight == 1){
 		return 2.67;
 	}
@@ -122,39 +131,48 @@ function calcPostageLargeEnvelopes(wieght){
 	else if(weight == 13){
 		return 4.29;
 	}
-
+	else{
+		//return Not Valid;
+	}
 }
 
 
 
 app.post('/getData', function(request, response){
 
+	//
 	var result,
 	weight = Number(request.body.weight);
 
-	switch(request.body.type){
-		case '1':
+	switch(Number(request.body.type)){
+		case 1 :
 		result = calcPostageLettersStamped(weight);
 		break;
-		case '2':
+		case 2 :
 		result = calcPostageLettersMetered(weight);
 		break;
-		case '3':
-		result = calcPostageLargeEnvelopes(wieght);
+		case 3 :
+		result = calcPostageLargeEnvelopes(weight);
 		break;
-		case '4':
+		case 4 :
 		result = calPostageParcel(weight);
 		break;
 	}
 
 	response.render('result', {
-		result: request.body.wieght
+		result: result
 
 	})
-console.log(request.body.wight);
+console.log(request.body.weight);
 console.log(request.body.type);
 });
 
 app.listen(process.env.PORT || 3000, function() {
 	console.log('server is listening');
 })
+
+<form action="/" method="GET">
+
+  <a href="https://lit-hollows-45843.herokuapp.com/">Back</a>
+
+</form>
